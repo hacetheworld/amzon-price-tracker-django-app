@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="jumbotron text-center">
+        <div class="container">
+          <div class="text-center">
+          <h1 class="jumbotron-heading text-capitalize">Welcome to the website</h1>
+          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          </div>
+          {% comment %} <p>1. Copy the product url from search bar </p>
+          <p>2. Put that url in to the input</p>
+          <p>3. But not too short so folks don't simply skip over it entir</p> {% endcomment %}
+
+          <p>
+            <a href="/login" class="btn btn-primary my-2">Login</a>
+            <a href="/register" class="btn btn-secondary my-2">Signup</a>
+          </p>
+        </div>
+      </section>
+{% endblock content %}

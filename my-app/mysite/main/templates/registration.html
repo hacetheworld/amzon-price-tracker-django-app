@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <section class="jumbotron text-center">
+        <h1>Registration {{response.id}}</h1>
+        <div class="row">
+          <div class="col-3"></div>
+          <div class="col-6">
+          <form method="post" action='#' class="form-group">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-lg rounded-0 btn-success">Register</button>
+        </form>
+        </div>
+        <div class="col-3"></div>
+
+        </div>
+      </section>
+{% endblock content %}
