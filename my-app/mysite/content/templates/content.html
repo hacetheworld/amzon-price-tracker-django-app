@@ -2,6 +2,26 @@
 
 {% block content %}
     <section class="jumbotron text-center">
-        <h1>Welcome {{user.username}}</h1>
+        <h1>How It Works</h1>
+
+        <p>1.Please copy product url from amazon search bar</p>
+        <p>2.Set the price that you want</p>
       </section>
+      <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+          <form class="form-inline">
+  <div class="form-group mb-2">
+    <label for="staticEmail2" class="sr-only">Email</label>
+    <input type="text" class="form-control" id="staticEmail2" placeholder="Product url ....">
+  </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">Password</label>
+    <input type="number" class="form-control" id="inputPassword2" placeholder="Set Price">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Add Item</button>
+</form>
+      </div>
+      <div class="col-3"></div>
+      </div>
 {% endblock content %}

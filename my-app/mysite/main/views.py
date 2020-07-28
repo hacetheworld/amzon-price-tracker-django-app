@@ -12,14 +12,17 @@ def home(response):
 
 
 def login_view(response):
-    if response.method == 'POST':
-        username = response.POST.get('username')
-        password = response.POST.get('password')
-        user = authenticate(username=username, password=password)
-        print(user)
-        if user is not None:
-            login(response, user)
-            return redirect('/profile/%s' % username)
+    if(len(str(response.user)) > 0 and str(response.user) != 'AnonymousUser'):
+        return redirect("http://127.0.0.1:8000/profile/%s" % str(response.user))
+    else:
+        if response.method == 'POST':
+            username = response.POST.get('username')
+            password = response.POST.get('password')
+            user = authenticate(username=username, password=password)
+            print(user)
+            if user is not None:
+                login(response, user)
+                return redirect('/profile/%s' % username)
 
-    form = AuthenticationForm()
-    return render(response, "login.html", {"form": form})
+        form = AuthenticationForm()
+        return render(response, "login.html", {"form": form})
