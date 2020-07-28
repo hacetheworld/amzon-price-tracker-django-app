@@ -20,13 +20,20 @@
   </button> {% endcomment %}
 
   <div class="ml-auto d-flex justify-content-center align-items-center" id="navbarSupportedContent">
-        <div>
+   {% if not user.is_authenticated %}
+            <div>
         <a href="/login" class="btn btn-secondary btn-md border-0 rounded-0 my-2 my-sm-0">Login</a>
           <a href="/register" class="btn btn-secondary btn-md border-0 rounded-0 my-2 my-sm-0" >Signup</a>
         </div>
+   {% else %}
+        <div>
+            <a href="/logout" class="btn btn-secondary btn-md border-0 rounded-0 my-2 my-sm-0">Logout</a>
+        </div>
+   {% endif %}
+
         <div>
         <button type="button" class="btn btn-warning ml-2">
-  Welcome <span class="badge badge-light">@user</span>
+  Welcome <span class="badge badge-light">@{{user.username}}</span>
   <span class="sr-only">@user</span>
 </button>
         </div>

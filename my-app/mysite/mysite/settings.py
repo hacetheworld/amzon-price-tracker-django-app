@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # My apps
     'main.apps.MainConfig',
     'register.apps.RegisterConfig',
+    'content.apps.ContentConfig',
     'crispy_forms',
 ]
 
@@ -122,3 +123,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# LOGIN_REDIRECT_URL = '/profile/<str:username>'
