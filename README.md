@@ -14,3 +14,9 @@ Thanks
 
 Application images
 <img src="./appimages/Screenshot (136).png" alt="img" />
+<img src="./appimages/Screenshot (137).png" alt="img" />
+<img src="./appimages/Screenshot (138).png" alt="img" />
+<img src="./appimages/Screenshot (139).png" alt="img" />
+<img src="./appimages/Screenshot (140).png" alt="img" />
+
+in order to use this app you have to tweak here and there i just made this application for practice.
