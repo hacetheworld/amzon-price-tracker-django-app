@@ -6,21 +6,53 @@
 
         <p>1.Please copy product url from amazon search bar</p>
         <p>2.Set the price that you want</p>
+        <p>3.Then we will keep track of the price and whenever product price become equal or less than the price you set we will send you an mail. </p>
       </section>
+      <h3 class="text-center text-success">{{msg}}</h3>
       <div class="row">
+
       <div class="col-3"></div>
       <div class="col-6">
-          <form class="form-inline">
-  <div class="form-group mb-2">
-    <label for="staticEmail2" class="sr-only">Email</label>
-    <input type="text" class="form-control" id="staticEmail2" placeholder="Product url ....">
-  </div>
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="inputPassword2" class="sr-only">Password</label>
-    <input type="number" class="form-control" id="inputPassword2" placeholder="Set Price">
-  </div>
-  <button type="submit" class="btn btn-primary mb-2">Add Item</button>
-</form>
+    <form method="post" action="#" class="form-inline">
+    {% csrf_token %}
+          <div class="form-group mb-2">
+              <label for="staticUrl2" class="sr-only">Url</label>
+             <input type="text" class="form-control" id="staticUrl2" name="name" placeholder="Product url ....">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+             <label for="inputPassword2" class="sr-only">Password</label>
+             <input type="number" name="price" class="form-control" id="inputPassword2" placeholder="Set Price">
+           </div>
+        <button type="submit" class="btn btn-primary mb-2">Add Item</button>
+      </form>
+
+      <div class="items mt-5">
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product Name</th>
+      <th scope="col">Original Price</th>
+      <th scope="col">Your Price</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for product in user.productlist.all %}
+          <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.currentPrice}}</td>
+            <td>{{product.price}}</td>
+            <td><a href="/delete/{{product.id}}">Delete</a></td>
+
+        </tr>
+      {% endfor %}
+
+  </tbody>
+</table>
+
+
+
+      </div>
       </div>
       <div class="col-3"></div>
       </div>
