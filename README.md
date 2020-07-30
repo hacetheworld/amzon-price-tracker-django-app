@@ -13,4 +13,4 @@ You can use this app and play around with it
 Thanks
 
 Application images
-<img src="Screenshot (136).png" alt="img" />
+<img src="./appimages/Screenshot (136).png" alt="img" />
